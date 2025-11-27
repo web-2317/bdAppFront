@@ -1,0 +1,196 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "projectName": "プロジェクト1",
+      "startDate": "2025-11-10",
+      "endDate": "2025-11-17"
+    },
+    {
+      "id": "2",
+      "projectName": "プロジェクト2",
+      "startDate": "2025-11-10",
+      "endDate": "2025-11-17"
+    },
+    {
+      "id": "3",
+      "projectName": "プロジェクト3",
+      "startDate": "2025-11-10",
+      "endDate": "2025-11-17"
+    },
+    {
+      "id": "abac",
+      "projectName": "TOEIC",
+      "startDate": "2025-11-14",
+      "endDate": "2025-11-15"
+    },
+    {
+      "id": "dc6d",
+      "projectName": "MVP作成",
+      "startDate": "2025-11-14",
+      "endDate": "2025-11-18"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "taskName": "環境構築とセットアップ",
+      "status": "DONE",
+      "points": 5,
+      "createDate": "2025-11-14",
+      "doneDate": "2025-11-14"
+    },
+    {
+      "id": "2",
+      "taskName": "ユーザ認証機能のプロトタイプ作成",
+      "status": "DONE",
+      "points": 15,
+      "createDate": "2025-11-14",
+      "doneDate": "2025-11-15"
+    },
+    {
+      "id": "3",
+      "taskName": "タスク一覧表示画面の作成",
+      "status": "DONE",
+      "points": 20,
+      "createDate": "2025-11-15",
+      "doneDate": "2025-11-16"
+    },
+    {
+      "id": "4",
+      "taskName": "タスク追加モーダルの実装",
+      "status": "DONE",
+      "points": 10,
+      "createDate": "2025-11-16",
+      "doneDate": "2025-11-16"
+    },
+    {
+      "id": "5",
+      "taskName": "タスク詳細表示コンポーネントの作成",
+      "status": "DONE",
+      "points": 15,
+      "createDate": "2025-11-16",
+      "doneDate": "2025-11-17"
+    },
+    {
+      "id": "6",
+      "taskName": "APIエンドポイントの定義（GET/POST）",
+      "status": "DONE",
+      "points": 5,
+      "createDate": "2025-11-14",
+      "doneDate": "2025-11-14"
+    },
+    {
+      "id": "7",
+      "taskName": "ステータス切り替え機能の実装",
+      "status": "ONGOING",
+      "points": 25,
+      "createDate": "2025-11-17",
+      "doneDate": null
+    },
+    {
+      "id": "8",
+      "taskName": "データ入力のバリデーション",
+      "status": "WAITING",
+      "points": 10,
+      "createDate": "2025-11-18",
+      "doneDate": null
+    },
+    {
+      "id": "9",
+      "taskName": "スタイル調整（CSS/SCSS）",
+      "status": "ONGOING",
+      "points": 30,
+      "createDate": "2025-11-15",
+      "doneDate": null
+    },
+    {
+      "id": "10",
+      "taskName": "README.mdのドラフト作成",
+      "status": "DONE",
+      "points": 5,
+      "createDate": "2025-11-14",
+      "doneDate": "2025-11-15"
+    },
+    {
+      "id": "11",
+      "taskName": "ポイント集計ロジックの作成",
+      "status": "DONE",
+      "points": 15,
+      "createDate": "2025-11-15",
+      "doneDate": "2025-11-17"
+    },
+    {
+      "id": "12",
+      "taskName": "モバイル表示の調整",
+      "status": "WAITING",
+      "points": 40,
+      "createDate": "2025-11-18",
+      "doneDate": null
+    },
+    {
+      "id": "13",
+      "taskName": "フィードバック収集の準備",
+      "status": "DONE",
+      "points": 5,
+      "createDate": "2025-11-17",
+      "doneDate": "2025-11-17"
+    },
+    {
+      "id": "14",
+      "taskName": "エラーハンドリングの基本設計",
+      "status": "ONGOING",
+      "points": 20,
+      "createDate": "2025-11-16",
+      "doneDate": null
+    },
+    {
+      "id": "15",
+      "taskName": "タスク削除機能の実装",
+      "status": "DONE",
+      "points": 10,
+      "createDate": "2025-11-15",
+      "doneDate": "2025-11-16"
+    },
+    {
+      "id": "16",
+      "taskName": "データベース接続設定の確認",
+      "status": "DONE",
+      "points": 5,
+      "createDate": "2025-11-14",
+      "doneDate": "2025-11-14"
+    },
+    {
+      "id": "17",
+      "taskName": "フィルタリング機能のモックアップ",
+      "status": "ONGOING",
+      "points": 35,
+      "createDate": "2025-11-17",
+      "doneDate": null
+    },
+    {
+      "id": "18",
+      "taskName": "ナビゲーションバーの作成",
+      "status": "DONE",
+      "points": 10,
+      "createDate": "2025-11-14",
+      "doneDate": "2025-11-15"
+    },
+    {
+      "id": "19",
+      "taskName": "ロゴとファビコンの追加",
+      "status": "DONE",
+      "points": 3,
+      "createDate": "2025-11-18",
+      "doneDate": "2025-11-18"
+    },
+    {
+      "id": "20",
+      "taskName": "全体的なコードレビューとリファクタリング（初期）",
+      "status": "WAITING",
+      "points": 50,
+      "createDate": "2025-11-18",
+      "doneDate": null
+    }
+  ]
+}
