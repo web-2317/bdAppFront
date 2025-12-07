@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const CreateProjectModal = ({ show, onClose, onSave }) => {
+const EditProjectModal = ({ show, onClose, onSave, projectName, startDate, endDate}) => {
 
     const [formData, setFormData] = useState({
         projectName: "",
         startDate: "",
         endDate: ""
     });
-    
+
     if (!show) return null;
-    
+
     return (
         <>
             <div
@@ -35,6 +35,7 @@ const CreateProjectModal = ({ show, onClose, onSave }) => {
                                      placeholder="プロジェクト名" 
                                      name="projectName"
                                      id="projectName"
+                                     value={projectName}
                                      onChange={(e) => {
                                         setFormData({...formData, projectName: e.target.value })
                                      }}
@@ -51,6 +52,7 @@ const CreateProjectModal = ({ show, onClose, onSave }) => {
                                         placeholder="開始日" 
                                         name="startDate"
                                         id="startDate"
+                                        value={startDate}
                                         onChange={(e) => {
                                         setFormData({...formData, startDate: e.target.value })
                                      }}
@@ -64,6 +66,7 @@ const CreateProjectModal = ({ show, onClose, onSave }) => {
                                          placeholder="終了日" 
                                          name="endDate"
                                          id="endDate"
+                                         value={endDate}
                                          onChange={(e) => {
                                         setFormData({...formData, endDate: e.target.value })
                                      }}
@@ -87,4 +90,4 @@ const CreateProjectModal = ({ show, onClose, onSave }) => {
     )
 }
 
-export default CreateProjectModal;
+export default EditProjectModal;

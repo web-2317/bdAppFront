@@ -16,53 +16,51 @@ const BDChart = ({startDate, endDate, task }) => {
     const dates = generateDateRange(startDate, endDate);
     const daysCount = dates.length;
     const totalPoints = task.reduce((a, c) => {
-        return a + c.points;
+        return a + (c.points || 0);
     }, 0);    
 
-    const createPoints = {};
-    const sumCreatePoints = [];
-    const donePoints = {};
-    const sumDonePoints = [];
+    console.log("task", task);
+    // console.log(totalPoints);
+
+    const dailyPoints = dates.reduce((acc, date) => {
+        acc[date] =  { create: 0, done: 0};
+        return acc;
+    }, {});
 
     task.forEach(t => {
-        if(t.doneDate ==! null){ 
-        const d = t.doneDate;
-        if(!donePoints[d]) donePoints[d] = [];
-        donePoints[d].push(t.points);
+        const points = t.points || 0;
+
+        const createDate = t.createDate ? t.createDate.slice(0, 10) : null;
+        if(createDate && dailyPoints[createDate]) {
+            dailyPoints[createDate].create += points;
         }
-      }
-    )
-    for(let i = 0; i < daysCount; i++) {
-        const sumDone = donePoints[dates[i]].reduce((a, c) => {
-            return a + c
-        }, 0);
-        sumDonePoints.push(sumDone);
-    };
 
-    
-    task.forEach(t => {
-    const d = t.createDate;
-    if(!createPoints[d]) createPoints[d] = [];
-    createPoints[d].push(t.points);
+        const doneDate = t.doneDate ? t.doneDate.slice(0, 10) : null;
+        if(doneDate && dailyPoints[doneDate]) {
+            dailyPoints[doneDate].done += points;
+        }
     });
-    for(let i = 0; i < daysCount; i++) {
-        const sumCreate = createPoints[dates[i]].reduce((a, c) => {
-            return a + c
-        }, 0);
-        sumCreatePoints.push(sumCreate);
-    };
-    
 
-    // console.log(createPoints);
-    //console.log(donePoints);
+    const remainingPointsArray = [];
+    let cumulativeCreated = 0;
+    let cumulativeDone = 0;
+
+    dates.forEach(date => {
+        const daily = dailyPoints[date];
+        // console.log(dailyPoints[date])
+        cumulativeCreated += daily.create;
+        cumulativeDone += daily.done;
+
+        remainingPointsArray.push(cumulativeCreated - cumulativeDone);
+    });
 
     const data = dates.map((date, i) => ({
         date,
-        remaining: sumCreatePoints[i] - sumDonePoints[i],
-        ideal: Math.max(totalPoints - (totalPoints / (daysCount - 1)) * i, 0)
-    }));
+        remaining: remainingPointsArray[i],
+        ideal: Math.max(totalPoints - (totalPoints / (daysCount - 1) * i), 0)
+    }));   
 
-    //console.log(data);
+    console.log("data", data);
 
     return (
         <>

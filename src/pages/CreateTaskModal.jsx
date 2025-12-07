@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
+import { getTodayDate } from './ProjectDetails';
 
-const CreateProjectModal = ({ show, onClose, onSave }) => {
+const CreateTaskModal = ({ show, onClose, onSave }) => {
 
     const [formData, setFormData] = useState({
-        projectName: "",
-        startDate: "",
-        endDate: ""
+        taskName: "",
+        status: "TODO",
+        points: parseInt(""),
+        createDate: getTodayDate(),
+        doneDate: null
     });
     
     if (!show) return null;
@@ -28,15 +31,15 @@ const CreateProjectModal = ({ show, onClose, onSave }) => {
                         <form>
                             <div className="modal-body mb-3">
                                 <div className="mb2">
-                                    <label htmlFor="projectName" className="form-label">プロジェクト名</label>
+                                    <label htmlFor="taskName" className="form-label">プロジェクト名</label>
                                     <input
                                      type="text" 
                                      className="form-control" 
-                                     placeholder="プロジェクト名" 
-                                     name="projectName"
-                                     id="projectName"
+                                     placeholder="タスク名" 
+                                     name="taskName"
+                                     id="taskName"
                                      onChange={(e) => {
-                                        setFormData({...formData, projectName: e.target.value })
+                                        setFormData({...formData, taskaName: e.target.value })
                                      }}
                                      ></input>
                                 </div>
@@ -44,30 +47,18 @@ const CreateProjectModal = ({ show, onClose, onSave }) => {
                                     {/* なんかここら辺レイアウトがうまくいってないけど結果的にいい感じになったからそのままにしとく
                                     リファクタリングするときに必要なら直す*/}
                                     <div className="col">
-                                        <label htmlFor="startDate" className="form-label">開始日</label>
+                                        <label htmlFor="points" className="form-label">工数</label>
                                         <input 
-                                        type="date" 
+                                        type="number" 
                                         className="form-control" 
-                                        placeholder="開始日" 
-                                        name="startDate"
-                                        id="startDate"
+                                        placeholder="points" 
+                                        name="points"
+                                        id="points"
                                         onChange={(e) => {
-                                        setFormData({...formData, startDate: e.target.value })
+                                        const value = e.target.value;
+                                        setFormData({...formData, points: value === "" ? 0 : Number(value) })
                                      }}
                                         ></input>
-                                    </div>
-                                    <div className="col">
-                                        <label htmlFor="endDate" className="form-label">終了日</label>
-                                        <input
-                                         type="date" 
-                                         className="form-control" 
-                                         placeholder="終了日" 
-                                         name="endDate"
-                                         id="endDate"
-                                         onChange={(e) => {
-                                        setFormData({...formData, endDate: e.target.value })
-                                     }}
-                                         ></input>
                                     </div>
                                 </div>
                             </div>
@@ -87,4 +78,4 @@ const CreateProjectModal = ({ show, onClose, onSave }) => {
     )
 }
 
-export default CreateProjectModal;
+export default CreateTaskModal;

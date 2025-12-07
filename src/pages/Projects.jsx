@@ -32,7 +32,7 @@ const Projects = () => {
 	};
 
 	const deleteProject = async (id) => {
-		await fetch(`http://localhost:3001/projects${id}`, {method: "DELETE"});
+		await fetch(`http://localhost:3001/projects/${id}`, {method: "DELETE"});
 
 		setProjects(projects.filter(p => p.id !== id));
 	};
@@ -94,4 +94,4 @@ const Projects = () => {
   );
 };
 
-export default Projects
+export default Projects;
